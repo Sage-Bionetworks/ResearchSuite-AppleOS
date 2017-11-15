@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		FF8DA0571FBBC91500DFABAB /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = FF8DA05A1FBBC91600DFABAB /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				FF8DA05B1FBBC91C00DFABAB /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		FF0472451F7AD4030023DAD6 /* RSDClassTypeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0472431F7AD4020023DAD6 /* RSDClassTypeMap.m */; };
 		FF0472461F7AD4030023DAD6 /* RSDClassTypeMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0472441F7AD4030023DAD6 /* RSDClassTypeMap.swift */; };
@@ -635,6 +649,11 @@
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
+					FF8DA0571FBBC91500DFABAB = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = 4B822CZK9N;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = FF72B22B1F6859D2004C6F15 /* Build configuration list for PBXProject "ResearchSuite" */;
@@ -651,6 +670,7 @@
 			targets = (
 				FF72B2301F6859D3004C6F15 /* ResearchSuite */,
 				FF72B2391F6859D3004C6F15 /* ResearchSuiteTests */,
+				FF8DA0571FBBC91500DFABAB /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -674,6 +694,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FF8DA05B1FBBC91C00DFABAB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "RSD_DOC_DIR=\"${PROJECT_DIR}/Documentation/\"\nRSD_PROJECT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}/\"\n\n#jazzy Xcode script\n# Start constants\ncompany=\"Sage Bionetworks\"\ncompanyID=\"org.sagebase\"\ncompanyURL=\"https://developer.sagebridge.org\"\ngithubURL=\"https://github.com/Sage-Bionetworks/ResearchSuite-AppleOS.git\"\ntarget=\"iphoneos\"\n#target=\"macosx\"\noutputPath=\"${RSD_DOC_DIR}\"\n# End constants\njazzy \\\n--clean \\\n--author \"${company}\" \\\n--author_url ${companyURL} \\\n--min-acl public \\\n--github_url ${githubURL} \\\n--output ${outputPath}\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FF72B22C1F6859D3004C6F15 /* Sources */ = {
@@ -983,6 +1019,24 @@
 			};
 			name = Release;
 		};
+		FF8DA0581FBBC91600DFABAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4B822CZK9N;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FF8DA0591FBBC91600DFABAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4B822CZK9N;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1009,6 +1063,15 @@
 			buildConfigurations = (
 				FF72B2491F6859D3004C6F15 /* Debug */,
 				FF72B24A1F6859D3004C6F15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF8DA05A1FBBC91600DFABAB /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF8DA0581FBBC91600DFABAB /* Debug */,
+				FF8DA0591FBBC91600DFABAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
